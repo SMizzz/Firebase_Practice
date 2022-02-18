@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DDq-v9-XW2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f1r-NG-Wee">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -153,8 +153,66 @@
             </objects>
             <point key="canvasLocation" x="-1091" y="86"/>
         </scene>
+        <!--Photo Upload View Controller-->
+        <scene sceneID="VoI-Xn-SkA">
+            <objects>
+                <viewController id="f1r-NG-Wee" customClass="PhotoUploadViewController" customModule="Firebase_Practice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="77m-Mw-aCS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0cy-FW-PU6">
+                                <rect key="frame" x="29" y="145" width="356" height="263"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="263" id="bgI-qg-IwH"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xG-rQ-Q3W">
+                                <rect key="frame" x="100" y="442" width="214" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="upload"/>
+                                <connections>
+                                    <action selector="uploadBtnTapped:" destination="Ie6-4v-2PW" eventType="touchUpInside" id="HT3-xW-m3l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXY-Y5-JmZ">
+                                <rect key="frame" x="288" y="83" width="97" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="pick photo"/>
+                                <connections>
+                                    <action selector="pickPhotoBtnTapped:" destination="f1r-NG-Wee" eventType="touchUpInside" id="yFm-fg-828"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="crl-ah-D5j"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="crl-ah-D5j" firstAttribute="trailing" secondItem="0cy-FW-PU6" secondAttribute="trailing" constant="29" id="93X-gk-FhB"/>
+                            <constraint firstItem="crl-ah-D5j" firstAttribute="trailing" secondItem="VXY-Y5-JmZ" secondAttribute="trailing" constant="29" id="Kdd-uk-5ap"/>
+                            <constraint firstItem="5xG-rQ-Q3W" firstAttribute="top" secondItem="0cy-FW-PU6" secondAttribute="bottom" constant="34" id="WcM-Fa-Ev6"/>
+                            <constraint firstItem="crl-ah-D5j" firstAttribute="trailing" secondItem="5xG-rQ-Q3W" secondAttribute="trailing" constant="100" id="Xn0-Sd-bSO"/>
+                            <constraint firstItem="0cy-FW-PU6" firstAttribute="top" secondItem="VXY-Y5-JmZ" secondAttribute="bottom" constant="24" id="a4s-KX-DFK"/>
+                            <constraint firstItem="0cy-FW-PU6" firstAttribute="leading" secondItem="crl-ah-D5j" secondAttribute="leading" constant="29" id="dIX-Np-utE"/>
+                            <constraint firstItem="5xG-rQ-Q3W" firstAttribute="leading" secondItem="crl-ah-D5j" secondAttribute="leading" constant="100" id="lWg-Gm-hEw"/>
+                            <constraint firstItem="VXY-Y5-JmZ" firstAttribute="top" secondItem="crl-ah-D5j" secondAttribute="top" constant="39" id="z1B-AC-qe4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="photoImageView" destination="0cy-FW-PU6" id="Vw3-Aa-DbD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9j8-AM-T7P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Ie6-4v-2PW" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-1088.4057971014493" y="750.66964285714278"/>
+        </scene>
     </scenes>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
