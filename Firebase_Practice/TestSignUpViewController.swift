@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import FirebaseFirestore
 
 class TestSignUpViewController: UIViewController {
   
@@ -20,17 +21,39 @@ class TestSignUpViewController: UIViewController {
   
   var userSex: String = ""
   
-  var ref = Database.database().reference()
+  //  var ref = Database.database().reference()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     configureTextField()
   }
   
+  private func configureGetData() {
+//    db.collection("users").document().
+    
+  }
+  
   private func configureTextField() {
     idTextField.delegate = self
     passwordTextField.delegate = self
     birthDateTextField.delegate = self
+  }
+  
+  @IBAction func IdCheckBtnTapped(_ sender: Any) {
+    if idTextField.text == "" {
+      let alertVC = UIAlertController(title: "확인!", message: "빈칸이 있어요.", preferredStyle: .alert)
+      let okAction = UIAlertAction(title: "네", style: .default, handler: nil)
+      alertVC.addAction(okAction)
+      self.present(alertVC, animated: true, completion: nil)
+    } else {
+      guard let id = idTextField.text else { return }
+      let documentRef = Firestore.firestore().document("users/\(id)")
+      documentRef.getDocument { (snapshot, error) in
+        guard let data = snapshot?.data(), error == nil else { return }
+        print("error is \(error?.localizedDescription)")
+        print("data is \(data)")
+      }
+    }
   }
   
   @IBAction func femaleBtnTapped(_ sender: Any) {
@@ -56,18 +79,38 @@ class TestSignUpViewController: UIViewController {
   }
   
   @IBAction func signUpBtnTapped(_ sender: Any) {
-    guard let userEmail = idTextField.text,
-          let userPassword = passwordTextField.text,
-          let birthDate = birthDateTextField.text else { return }
-    Auth.auth().createUser(withEmail: userEmail, password: userPassword) { [self] authResult, error in
-      guard let user = authResult?.user, error == nil else {
-        print(error?.localizedDescription)
-        return
+    if idTextField.text == "" || passwordTextField.text == "" || birthDateTextField.text == "" || userSex == "" {
+      let alertVC = UIAlertController(title: "확인!", message: "빈칸이 있어요.", preferredStyle: .alert)
+      let okAction = UIAlertAction(title: "네", style: .default, handler: nil)
+      alertVC.addAction(okAction)
+      self.present(alertVC, animated: true, completion: nil)
+    } else {
+      let db = Firestore.firestore()
+      let newDocument = db.collection("users").document()
+      guard let id = idTextField.text,
+            let password = passwordTextField.text,
+            let birthDate = birthDateTextField.text else { return }
+      
+      Auth.auth().createUser(withEmail: id, password: password) { [self] (authResult, error) in
+        guard let user = authResult?.user, error == nil else {
+          print(error?.localizedDescription)
+          return
+        }
+        
+        newDocument.setData(["id": id, "password": password, "birthDate": birthDate, "sex": userSex, "userId": newDocument.documentID])
+        self.navigationController?.popViewController(animated: true)
       }
-      ref.child("users").child(user.uid).setValue(["birthDate": birthDate, "sex": userSex])
+      //    guard let userEmail = idTextField.text,
+      //          let userPassword = passwordTextField.text,
+      //          let birthDate = birthDateTextField.text else { return }
+      //    Auth.auth().createUser(withEmail: userEmail, password: userPassword) { [self] (authResult, error) in
+      //      guard let user = authResult?.user, error == nil else {
+      //        print(error?.localizedDescription)
+      //        return
+      //      }
+      //      ref.child("users").child(user.uid).setValue(["birthDate": birthDate, "sex": userSex])
     }
   }
-  
 }
 
 extension TestSignUpViewController: UITextFieldDelegate {

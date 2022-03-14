@@ -10,6 +10,8 @@
 		024D9E7D27B0B55B0021F8E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 024D9E7C27B0B55A0021F8E6 /* GoogleService-Info.plist */; };
 		024D9E7F27B0BDF50021F8E6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024D9E7E27B0BDF50021F8E6 /* LoginViewController.swift */; };
 		02C6A4AC27B222E40096BC14 /* PhotoUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C6A4AB27B222E40096BC14 /* PhotoUploadViewController.swift */; };
+		02CEE43627D08FC800147E26 /* GetDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CEE43527D08FC800147E26 /* GetDataViewController.swift */; };
+		02CEE43827D098B300147E26 /* TestLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CEE43727D098B300147E26 /* TestLoginViewController.swift */; };
 		02CFCEC727AB67CE0039E6B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CFCEC627AB67CE0039E6B1 /* AppDelegate.swift */; };
 		02CFCEC927AB67CE0039E6B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CFCEC827AB67CE0039E6B1 /* SceneDelegate.swift */; };
 		02CFCECB27AB67CE0039E6B1 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CFCECA27AB67CE0039E6B1 /* SignUpViewController.swift */; };
@@ -24,6 +26,8 @@
 		024D9E7C27B0B55A0021F8E6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		024D9E7E27B0BDF50021F8E6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		02C6A4AB27B222E40096BC14 /* PhotoUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUploadViewController.swift; sourceTree = "<group>"; };
+		02CEE43527D08FC800147E26 /* GetDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDataViewController.swift; sourceTree = "<group>"; };
+		02CEE43727D098B300147E26 /* TestLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLoginViewController.swift; sourceTree = "<group>"; };
 		02CFCEC327AB67CE0039E6B1 /* Firebase_Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Firebase_Practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02CFCEC627AB67CE0039E6B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02CFCEC827AB67CE0039E6B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,8 +93,10 @@
 				02CFCED427AB67CF0039E6B1 /* Info.plist */,
 				02CFCECA27AB67CE0039E6B1 /* SignUpViewController.swift */,
 				024D9E7E27B0BDF50021F8E6 /* LoginViewController.swift */,
-				02C6A4AB27B222E40096BC14 /* PhotoUploadViewController.swift */,
 				02E91D3027C4A6D100F1EAF0 /* TestSignUpViewController.swift */,
+				02CEE43727D098B300147E26 /* TestLoginViewController.swift */,
+				02C6A4AB27B222E40096BC14 /* PhotoUploadViewController.swift */,
+				02CEE43527D08FC800147E26 /* GetDataViewController.swift */,
 			);
 			path = Firebase_Practice;
 			sourceTree = "<group>";
@@ -219,12 +225,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02CEE43827D098B300147E26 /* TestLoginViewController.swift in Sources */,
 				024D9E7F27B0BDF50021F8E6 /* LoginViewController.swift in Sources */,
 				02C6A4AC27B222E40096BC14 /* PhotoUploadViewController.swift in Sources */,
 				02CFCECB27AB67CE0039E6B1 /* SignUpViewController.swift in Sources */,
 				02CFCEC727AB67CE0039E6B1 /* AppDelegate.swift in Sources */,
 				02E91D3127C4A6D100F1EAF0 /* TestSignUpViewController.swift in Sources */,
 				02CFCEC927AB67CE0039E6B1 /* SceneDelegate.swift in Sources */,
+				02CEE43627D08FC800147E26 /* GetDataViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
