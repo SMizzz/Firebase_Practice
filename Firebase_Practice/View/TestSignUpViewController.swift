@@ -13,6 +13,7 @@ import FirebaseFirestore
 class TestSignUpViewController: UIViewController {
   
   @IBOutlet weak var idTextField: UITextField!
+  @IBOutlet weak var duplicateEmailGuideLabel: UILabel!
   @IBOutlet weak var passwordTextField: UITextField!
   @IBOutlet weak var birthDateTextField: UITextField!
   
@@ -25,12 +26,8 @@ class TestSignUpViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    duplicateEmailGuideLabel.isHidden = true
     configureTextField()
-  }
-  
-  private func configureGetData() {
-//    db.collection("users").document().
-    
   }
   
   private func configureTextField() {
@@ -49,9 +46,12 @@ class TestSignUpViewController: UIViewController {
       guard let id = idTextField.text else { return }
       let documentRef = Firestore.firestore().document("users/\(id)")
       documentRef.getDocument { (snapshot, error) in
-        guard let data = snapshot?.data(), error == nil else { return }
-        print("error is \(error?.localizedDescription)")
-        print("data is \(data)")
+        guard let data = snapshot?.data(), error == nil else {
+          self.duplicateEmailGuideLabel.isHidden = false
+          self.duplicateEmailGuideLabel.text = "사용가능한 ID 입니다."
+          return }
+        self.duplicateEmailGuideLabel.isHidden = false
+        self.duplicateEmailGuideLabel.text = "중복된 이메일입니다. 확인해주세요."
       }
     }
   }
@@ -86,7 +86,7 @@ class TestSignUpViewController: UIViewController {
       self.present(alertVC, animated: true, completion: nil)
     } else {
       let db = Firestore.firestore()
-      let newDocument = db.collection("users").document()
+      let newDocument = db.collection("users").document("\(idTextField.text!)")
       guard let id = idTextField.text,
             let password = passwordTextField.text,
             let birthDate = birthDateTextField.text else { return }
@@ -97,7 +97,7 @@ class TestSignUpViewController: UIViewController {
           return
         }
         
-        newDocument.setData(["id": id, "password": password, "birthDate": birthDate, "sex": userSex, "userId": newDocument.documentID])
+        newDocument.setData(["birthDate": birthDate, "sex": userSex, "userId": newDocument.documentID])
         self.navigationController?.popViewController(animated: true)
       }
       //    guard let userEmail = idTextField.text,

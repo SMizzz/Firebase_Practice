@@ -18,6 +18,7 @@
 		02CFCECE27AB67CE0039E6B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02CFCECC27AB67CE0039E6B1 /* Main.storyboard */; };
 		02CFCED027AB67CF0039E6B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02CFCECF27AB67CF0039E6B1 /* Assets.xcassets */; };
 		02CFCED327AB67CF0039E6B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02CFCED127AB67CF0039E6B1 /* LaunchScreen.storyboard */; };
+		02E6EA2427E067A900B0A3B4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E6EA2327E067A900B0A3B4 /* User.swift */; };
 		02E91D3127C4A6D100F1EAF0 /* TestSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E91D3027C4A6D100F1EAF0 /* TestSignUpViewController.swift */; };
 		2DC2FF6659D3514977644573 /* Pods_Firebase_Practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2D874DF606EB2AFCF1A8EF0 /* Pods_Firebase_Practice.framework */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		02CFCECF27AB67CF0039E6B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02CFCED227AB67CF0039E6B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02CFCED427AB67CF0039E6B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02E6EA2327E067A900B0A3B4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		02E91D3027C4A6D100F1EAF0 /* TestSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSignUpViewController.swift; sourceTree = "<group>"; };
 		13C7724B7B109C214D4558C6 /* Pods-Firebase_Practice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase_Practice.debug.xcconfig"; path = "Target Support Files/Pods-Firebase_Practice/Pods-Firebase_Practice.debug.xcconfig"; sourceTree = "<group>"; };
 		43AD2767E7D8E4E3E74E5DA9 /* Pods-Firebase_Practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase_Practice.release.xcconfig"; path = "Target Support Files/Pods-Firebase_Practice/Pods-Firebase_Practice.release.xcconfig"; sourceTree = "<group>"; };
@@ -84,6 +86,9 @@
 		02CFCEC527AB67CE0039E6B1 /* Firebase_Practice */ = {
 			isa = PBXGroup;
 			children = (
+				02E6EA2027E0679400B0A3B4 /* Model */,
+				02E6EA1E27E0677700B0A3B4 /* View */,
+				02E6EA1F27E0678900B0A3B4 /* Test */,
 				02CFCEC627AB67CE0039E6B1 /* AppDelegate.swift */,
 				02CFCEC827AB67CE0039E6B1 /* SceneDelegate.swift */,
 				02CFCECC27AB67CE0039E6B1 /* Main.storyboard */,
@@ -91,14 +96,36 @@
 				02CFCED127AB67CF0039E6B1 /* LaunchScreen.storyboard */,
 				024D9E7C27B0B55A0021F8E6 /* GoogleService-Info.plist */,
 				02CFCED427AB67CF0039E6B1 /* Info.plist */,
-				02CFCECA27AB67CE0039E6B1 /* SignUpViewController.swift */,
-				024D9E7E27B0BDF50021F8E6 /* LoginViewController.swift */,
+			);
+			path = Firebase_Practice;
+			sourceTree = "<group>";
+		};
+		02E6EA1E27E0677700B0A3B4 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				02E91D3027C4A6D100F1EAF0 /* TestSignUpViewController.swift */,
 				02CEE43727D098B300147E26 /* TestLoginViewController.swift */,
 				02C6A4AB27B222E40096BC14 /* PhotoUploadViewController.swift */,
 				02CEE43527D08FC800147E26 /* GetDataViewController.swift */,
 			);
-			path = Firebase_Practice;
+			path = View;
+			sourceTree = "<group>";
+		};
+		02E6EA1F27E0678900B0A3B4 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				02CFCECA27AB67CE0039E6B1 /* SignUpViewController.swift */,
+				024D9E7E27B0BDF50021F8E6 /* LoginViewController.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		02E6EA2027E0679400B0A3B4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				02E6EA2327E067A900B0A3B4 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F08C8B1CDAE0ACF2B210E4DB /* Frameworks */ = {
@@ -226,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02CEE43827D098B300147E26 /* TestLoginViewController.swift in Sources */,
+				02E6EA2427E067A900B0A3B4 /* User.swift in Sources */,
 				024D9E7F27B0BDF50021F8E6 /* LoginViewController.swift in Sources */,
 				02C6A4AC27B222E40096BC14 /* PhotoUploadViewController.swift in Sources */,
 				02CFCECB27AB67CE0039E6B1 /* SignUpViewController.swift in Sources */,

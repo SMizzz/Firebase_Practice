@@ -28,6 +28,7 @@ class TestLoginViewController: UIViewController {
         print("login success")
         let mainSB = UIStoryboard(name: "Main", bundle: nil)
         let photoVC = mainSB.instantiateViewController(withIdentifier: "PhotoUploadVC")
+        let userEmail = UserDefaults.standard.set(self.idTextField.text!, forKey: "userEmail")
         self.navigationController?.pushViewController(photoVC, animated: true)
       }
 

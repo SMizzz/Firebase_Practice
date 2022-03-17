@@ -243,10 +243,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="AYn-KA-jLS">
-                                <rect key="frame" x="20" y="94" width="302" height="343"/>
+                                <rect key="frame" x="20" y="94" width="302" height="367"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Icp-Kk-SoH">
-                                        <rect key="frame" x="0.0" y="0.0" width="302" height="62.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="302" height="86.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아이디" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWZ-EJ-AAT">
                                                 <rect key="frame" x="0.0" y="0.0" width="44.5" height="20.5"/>
@@ -262,10 +262,16 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="중복된 이메일입니다. 확인해주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6t-HH-0GK">
+                                                <rect key="frame" x="0.0" y="70.5" width="184" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="c9f-iE-rFg">
-                                        <rect key="frame" x="0.0" y="97.5" width="302" height="62.5"/>
+                                        <rect key="frame" x="0.0" y="121.5" width="302" height="62.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HyZ-0n-FZY">
                                                 <rect key="frame" x="0.0" y="0.0" width="59" height="20.5"/>
@@ -284,7 +290,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MuH-cT-Lyv">
-                                        <rect key="frame" x="0.0" y="195" width="302" height="62.5"/>
+                                        <rect key="frame" x="0.0" y="219" width="302" height="62.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="생년월일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1X-KP-lFo">
                                                 <rect key="frame" x="0.0" y="0.0" width="59" height="20.5"/>
@@ -303,7 +309,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fAh-NR-Rsp">
-                                        <rect key="frame" x="0.0" y="292.5" width="177" height="50.5"/>
+                                        <rect key="frame" x="0.0" y="316.5" width="177" height="50.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성별" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9d-qA-hap">
                                                 <rect key="frame" x="0.0" y="0.0" width="29.5" height="20.5"/>
@@ -343,7 +349,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAE-Wv-8fA">
-                                <rect key="frame" x="40" y="521" width="334" height="50"/>
+                                <rect key="frame" x="40" y="545" width="334" height="50"/>
                                 <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="pEs-k9-nZc"/>
@@ -385,6 +391,7 @@
                     <navigationItem key="navigationItem" id="COU-aV-jN3"/>
                     <connections>
                         <outlet property="birthDateTextField" destination="7vg-v1-6j9" id="4fK-gg-9kI"/>
+                        <outlet property="duplicateEmailGuideLabel" destination="l6t-HH-0GK" id="6sk-Qj-2te"/>
                         <outlet property="femaleButton" destination="kJH-gk-Jqv" id="7BZ-Nh-vXI"/>
                         <outlet property="idTextField" destination="q6S-W0-C69" id="ICw-K9-jT4"/>
                         <outlet property="maleButton" destination="mFW-HF-jA5" id="WG4-GU-rkV"/>
@@ -545,6 +552,9 @@
         </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
